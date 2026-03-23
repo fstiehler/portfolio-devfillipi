@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Github, Linkedin } from "lucide-react";
+import { Mail, Phone, Linkedin } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -29,23 +29,23 @@ const Contact = () => {
           className="flex justify-center gap-6"
         >
           <a
-            href="mailto:seuemail@email.com"
+            href="mailto:fillipivillani2024@gmail.com"
             className="flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-heading text-sm font-semibold hover:opacity-90 transition-opacity glow-box"
           >
             <Mail className="w-4 h-4" />
             E-mail
           </a>
           <a
-            href="https://github.com/"
+            href="https://wa.me/5547996277454"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-6 py-3 rounded-lg border border-glow text-foreground font-heading text-sm font-semibold hover:bg-secondary transition-colors"
           >
-            <Github className="w-4 h-4" />
-            GitHub
+            <Phone className="w-4 h-4" />
+            WhatsApp
           </a>
           <a
-            href="https://linkedin.com/"
+            href="https://www.linkedin.com/in/fstiehler"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-6 py-3 rounded-lg border border-glow text-foreground font-heading text-sm font-semibold hover:bg-secondary transition-colors"
