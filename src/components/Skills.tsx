@@ -2,14 +2,14 @@ import { motion } from "framer-motion";
 
 const skills = [
   { name: "React.js", level: 90, category: "frontend" },
-  { name: "TypeScript", level: 85, category: "frontend" },
-  { name: "JavaScript", level: 90, category: "frontend" },
+  { name: "TypeScript", level: 95, category: "frontend" },
+  { name: "JavaScript", level: 100, category: "frontend" },
   { name: "Next.js", level: 75, category: "frontend" },
-  { name: "HTML & CSS", level: 95, category: "frontend" },
-  { name: "Material UI", level: 80, category: "frontend" },
-  { name: "Git", level: 80, category: "tools" },
-  { name: "Golang", level: 30, category: "backend" },
-  { name: "Nest.js", level: 25, category: "backend" },
+  { name: "HTML & CSS", level: 100, category: "frontend" },
+  { name: "Material UI", level: 100, category: "frontend" },
+  { name: "Git", level: 100, category: "tools" },
+  { name: "Golang", level: 45, category: "backend" },
+  { name: "Nest.js", level: 50, category: "backend" },
 ];
 
 const SkillBar = ({ name, level, index }: { name: string; level: number; index: number }) => (

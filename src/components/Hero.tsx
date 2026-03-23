@@ -28,7 +28,7 @@ const Hero = () => {
         >
           <span className="text-foreground">Olá, eu sou</span>
           <br />
-          <span className="text-gradient">[Seu Nome]</span>
+          <span className="text-gradient">Fillipi Villani Stiehler</span>
         </motion.h1>
 
         <motion.p
