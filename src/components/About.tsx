@@ -1,0 +1,47 @@
+import { motion } from "framer-motion";
+
+const About = () => {
+  return (
+    <section id="sobre" className="py-24 px-6">
+      <div className="max-w-4xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+        >
+          <p className="font-mono text-primary text-sm tracking-widest mb-3">// sobre mim</p>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-8">
+            Quem sou eu<span className="text-primary">.</span>
+          </h2>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+          className="space-y-5 text-secondary-foreground leading-relaxed text-lg"
+        >
+          <p>
+            Tenho <span className="text-primary font-semibold">18 anos</span> e sou apaixonado por desenvolvimento de software,
+            com foco principal em <span className="text-primary font-semibold">Front-End</span>. Minha jornada na programação
+            começou cedo e hoje construo interfaces web modernas, responsivas e focadas na experiência do usuário.
+          </p>
+          <p>
+            Trabalho com <span className="text-foreground">React, TypeScript, JavaScript, HTML e CSS</span>, criando
+            componentes reutilizáveis e estruturando aplicações de forma escalável. Também possuo experiência
+            com backend em <span className="text-foreground">Golang</span> e <span className="text-foreground">Nest.js</span>,
+            o que me permite ter uma visão mais completa das aplicações.
+          </p>
+          <p>
+            Acredito que um bom código é aquele que resolve problemas de forma elegante e que outros
+            desenvolvedores conseguem entender e manter facilmente.
+          </p>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default About;
