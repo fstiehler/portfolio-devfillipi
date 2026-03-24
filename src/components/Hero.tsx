@@ -72,9 +72,9 @@ const Hero = () => {
           transition={{ duration: 0.7, delay: 0.15 }}
           className="font-heading text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6"
         >
-          <InteractiveText text="Olá, eu sou" className="text-foreground" />
+          <ScrambleText text="Olá, eu sou" className="text-foreground" />
           <br />
-          <InteractiveText text="Fillipi Villani Stiehler" className="text-gradient" />
+          <ScrambleText text="Fillipi Villani Stiehler" className="text-gradient" />
         </motion.h1>
 
         <motion.p
