@@ -8,7 +8,20 @@ const projects = [
       "Website completo para estética automotiva, com catálogo de serviços, galeria, integração com WhatsApp e design responsivo focado em conversão.",
     tags: ["React", "TypeScript", "Responsive Design", "SEO"],
     url: "https://esteticavillani.com.br",
-    highlight: true,
+  },
+  {
+    title: "System Fluids",
+    description:
+      "Plataforma web desenvolvida para a System Fluids, com foco em apresentação institucional e catálogo de produtos industriais.",
+    tags: ["React", "TypeScript", "Material UI"],
+    url: "https://www.systemfluids.com.br",
+  },
+  {
+    title: "EKO GF",
+    description:
+      "Website institucional para a EKO GF, com design moderno, responsivo e otimizado para performance e SEO.",
+    tags: ["React", "TypeScript", "Responsive Design"],
+    url: "https://ekogf.com",
   },
 ];
 
@@ -30,7 +43,7 @@ const Projects = () => {
           </h2>
         </motion.div>
 
-        <div className="grid gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           {projects.map((project, i) => (
             <motion.a
               key={project.title}
@@ -41,30 +54,26 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group block rounded-xl border border-border bg-card p-6 md:p-8 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_-10px_hsl(var(--primary)/0.3)]"
+              className="group block rounded-xl border border-border bg-card p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_-10px_hsl(var(--primary)/0.3)]"
             >
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-                <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-3">
-                    <h3 className="font-heading text-xl font-bold text-foreground group-hover:text-primary transition-colors">
-                      {project.title}
-                    </h3>
-                    <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
-                  </div>
-                  <p className="text-muted-foreground leading-relaxed mb-4">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="font-mono text-xs px-3 py-1 rounded-full bg-secondary text-primary"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+              <div className="flex items-center gap-3 mb-3">
+                <h3 className="font-heading text-lg font-bold text-foreground group-hover:text-primary transition-colors">
+                  {project.title}
+                </h3>
+                <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+              </div>
+              <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                {project.description}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {project.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="font-mono text-xs px-3 py-1 rounded-full bg-secondary text-primary"
+                  >
+                    {tag}
+                  </span>
+                ))}
               </div>
             </motion.a>
           ))}

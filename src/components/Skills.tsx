@@ -1,44 +1,35 @@
 import { motion } from "framer-motion";
 
 const skills = [
-  { name: "React.js", level: 90, category: "frontend" },
-  { name: "TypeScript", level: 95, category: "frontend" },
-  { name: "JavaScript", level: 100, category: "frontend" },
-  { name: "Next.js", level: 75, category: "frontend" },
-  { name: "HTML & CSS", level: 100, category: "frontend" },
-  { name: "Material UI", level: 100, category: "frontend" },
-  { name: "Git", level: 100, category: "tools" },
-  { name: "Golang", level: 45, category: "backend" },
-  { name: "Nest.js", level: 50, category: "backend" },
+  { name: "React.js", category: "frontend" },
+  { name: "TypeScript", category: "frontend" },
+  { name: "JavaScript", category: "frontend" },
+  { name: "Next.js", category: "frontend" },
+  { name: "HTML & CSS", category: "frontend" },
+  { name: "Material UI", category: "frontend" },
+  { name: "Git", category: "tools" },
+  { name: "GitHub", category: "tools" },
+  { name: "GitLab", category: "tools" },
+  { name: "Jira", category: "tools" },
+  { name: "Golang", category: "backend" },
+  { name: "Nest.js", category: "backend" },
 ];
 
-const SkillBar = ({ name, level, index }: { name: string; level: number; index: number }) => (
-  <motion.div
-    initial={{ opacity: 0, x: -20 }}
-    whileInView={{ opacity: 1, x: 0 }}
+const SkillTag = ({ name, index }: { name: string; index: number }) => (
+  <motion.span
+    initial={{ opacity: 0, scale: 0.8 }}
+    whileInView={{ opacity: 1, scale: 1 }}
     viewport={{ once: true }}
-    transition={{ duration: 0.4, delay: index * 0.07 }}
-    className="group"
+    transition={{ duration: 0.3, delay: index * 0.05 }}
+    className="font-mono text-sm px-4 py-2 rounded-full border border-border bg-secondary text-foreground hover:border-primary hover:text-primary transition-colors cursor-default"
   >
-    <div className="flex justify-between items-center mb-2">
-      <span className="font-mono text-sm text-foreground">{name}</span>
-      <span className="font-mono text-xs text-muted-foreground">{level}%</span>
-    </div>
-    <div className="h-1.5 rounded-full bg-secondary overflow-hidden">
-      <motion.div
-        initial={{ width: 0 }}
-        whileInView={{ width: `${level}%` }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, delay: index * 0.07 + 0.2, ease: "easeOut" }}
-        className="h-full rounded-full bg-primary"
-      />
-    </div>
-  </motion.div>
+    {name}
+  </motion.span>
 );
 
 const Skills = () => {
-  const frontend = skills.filter(s => s.category === "frontend");
-  const other = skills.filter(s => s.category !== "frontend");
+  const frontend = skills.filter((s) => s.category === "frontend");
+  const other = skills.filter((s) => s.category !== "frontend");
 
   return (
     <section id="skills" className="py-24 px-6">
@@ -58,18 +49,18 @@ const Skills = () => {
         <div className="grid md:grid-cols-2 gap-12">
           <div>
             <h3 className="font-mono text-primary text-xs tracking-widest uppercase mb-6">Front-End</h3>
-            <div className="space-y-5">
+            <div className="flex flex-wrap gap-3">
               {frontend.map((skill, i) => (
-                <SkillBar key={skill.name} {...skill} index={i} />
+                <SkillTag key={skill.name} name={skill.name} index={i} />
               ))}
             </div>
           </div>
 
           <div>
             <h3 className="font-mono text-primary text-xs tracking-widest uppercase mb-6">Back-End & Ferramentas</h3>
-            <div className="space-y-5">
+            <div className="flex flex-wrap gap-3">
               {other.map((skill, i) => (
-                <SkillBar key={skill.name} {...skill} index={i} />
+                <SkillTag key={skill.name} name={skill.name} index={i} />
               ))}
             </div>
           </div>
