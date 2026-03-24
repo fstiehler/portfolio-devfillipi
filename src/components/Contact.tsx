@@ -3,7 +3,7 @@ import { Mail, Phone, Linkedin } from "lucide-react";
 
 const Contact = () => {
   return (
-    <section id="contato" className="py-24 px-6">
+    <section id="contato" className="py-16 sm:py-24 px-4 sm:px-6">
       <div className="max-w-4xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -26,7 +26,7 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex justify-center gap-6"
+          className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6"
         >
           <a
             href="mailto:fillipivillani2024@gmail.com"

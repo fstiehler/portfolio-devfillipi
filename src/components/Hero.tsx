@@ -30,7 +30,7 @@ const InteractiveText = ({ text, className }: { text: string; className?: string
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-6">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6">
       <div className="absolute inset-0 opacity-[0.03]" style={{
         backgroundImage: 'linear-gradient(hsl(175 80% 50%) 1px, transparent 1px), linear-gradient(90deg, hsl(175 80% 50%) 1px, transparent 1px)',
         backgroundSize: '60px 60px'
@@ -51,7 +51,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.15 }}
-          className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6"
+          className="font-heading text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6"
         >
           <InteractiveText text="Olá, eu sou" className="text-foreground" />
           <br />
@@ -72,7 +72,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="flex gap-4 justify-center"
+          className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <a
             href="#contato"

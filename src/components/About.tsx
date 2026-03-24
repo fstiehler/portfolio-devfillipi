@@ -3,7 +3,7 @@ import fillipiPhoto from "@/assets/fillipi-photo.jpg";
 
 const About = () => {
   return (
-    <section id="sobre" className="py-24 px-6">
+    <section id="sobre" className="py-16 sm:py-24 px-4 sm:px-6">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -17,7 +17,7 @@ const About = () => {
           </h2>
         </motion.div>
 
-        <div className="flex flex-col md:flex-row gap-10 items-start">
+        <div className="flex flex-col md:flex-row gap-8 md:gap-10 items-center md:items-start">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -40,7 +40,7 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="space-y-5 text-secondary-foreground leading-relaxed text-lg"
+            className="space-y-5 text-secondary-foreground leading-relaxed text-base sm:text-lg"
           >
             <p>
               Tenho <span className="text-primary font-semibold">18 anos</span> e sou apaixonado por desenvolvimento de software,

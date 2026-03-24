@@ -3,7 +3,7 @@ import { Briefcase, Calendar } from "lucide-react";
 
 const Experience = () => {
   return (
-    <section id="experiencia" className="py-24 px-6">
+    <section id="experiencia" className="py-16 sm:py-24 px-4 sm:px-6">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -27,14 +27,14 @@ const Experience = () => {
           {/* Timeline dot */}
           <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary glow-box" />
 
-          <div className="mb-2 flex items-center gap-3 flex-wrap">
-            <Briefcase className="w-4 h-4 text-primary" />
-            <h3 className="font-heading text-xl font-bold text-foreground">
+          <div className="mb-2 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
+            <Briefcase className="w-4 h-4 text-primary hidden sm:block" />
+            <h3 className="font-heading text-lg sm:text-xl font-bold text-foreground">
               Assistente de Desenvolvedor Frontend
             </h3>
           </div>
 
-          <div className="flex items-center gap-2 mb-6">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 mb-6">
             <span className="font-mono text-primary text-sm font-semibold">Evoluinfo Tecnologias</span>
             <span className="text-muted-foreground">·</span>
             <div className="flex items-center gap-1.5 text-muted-foreground text-sm">
