@@ -23,6 +23,13 @@ const projects = [
     tags: ["React", "TypeScript", "Responsive Design"],
     url: "https://ekogf.com",
   },
+  {
+    title: "Zyroon",
+    description:
+      "Plataforma web moderna com interface intuitiva, design responsivo e foco em experiência do usuário.",
+    tags: ["React", "TypeScript", "Front-End"],
+    url: "https://zyroon.com.br",
+  },
 ];
 
 const Projects = () => {
