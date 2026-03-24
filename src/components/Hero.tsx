@@ -30,7 +30,7 @@ const InteractiveText = ({ text, className }: { text: string; className?: string
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-6">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6">
       <div className="absolute inset-0 opacity-[0.03]" style={{
         backgroundImage: 'linear-gradient(hsl(175 80% 50%) 1px, transparent 1px), linear-gradient(90deg, hsl(175 80% 50%) 1px, transparent 1px)',
         backgroundSize: '60px 60px'
