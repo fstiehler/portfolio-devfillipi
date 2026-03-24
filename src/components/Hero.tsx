@@ -1,52 +1,34 @@
 import { motion } from "framer-motion";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { Download } from "lucide-react";
 
-const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%&*!?<>/";
-
-const ScrambleText = ({ text, className }: { text: string; className?: string }) => {
-  const [display, setDisplay] = useState(text);
-  const [isScrambling, setIsScrambling] = useState(false);
-
-  const scramble = useCallback(() => {
-    if (isScrambling) return;
-    setIsScrambling(true);
-    let iteration = 0;
-    const interval = setInterval(() => {
-      setDisplay(
-        text
-          .split("")
-          .map((char, i) => {
-            if (char === " ") return " ";
-            if (i < iteration) return text[i];
-            return chars[Math.floor(Math.random() * chars.length)];
-          })
-          .join("")
-      );
-      iteration += 1 / 2;
-      if (iteration >= text.length) {
-        clearInterval(interval);
-        setDisplay(text);
-        setIsScrambling(false);
-      }
-    }, 30);
-  }, [text, isScrambling]);
+const TypewriterText = ({ text, className, delay = 0 }: { text: string; className?: string; delay?: number }) => {
+  const [displayed, setDisplayed] = useState("");
+  const [started, setStarted] = useState(false);
 
   useEffect(() => {
-    const timeout = setTimeout(scramble, 800);
+    const timeout = setTimeout(() => setStarted(true), delay);
     return () => clearTimeout(timeout);
-  }, []);
+  }, [delay]);
+
+  useEffect(() => {
+    if (!started) return;
+    if (displayed.length >= text.length) return;
+    const timeout = setTimeout(() => {
+      setDisplayed(text.slice(0, displayed.length + 1));
+    }, 60);
+    return () => clearTimeout(timeout);
+  }, [displayed, started, text]);
 
   return (
-    <span
-      className={`${className} cursor-default`}
-      onMouseEnter={scramble}
-    >
-      {display}
+    <span className={className}>
+      {displayed}
+      {displayed.length < text.length && started && (
+        <span className="animate-blink text-primary">|</span>
+      )}
     </span>
   );
 };
-
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6">
@@ -72,9 +54,9 @@ const Hero = () => {
           transition={{ duration: 0.7, delay: 0.15 }}
           className="font-heading text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6"
         >
-          <ScrambleText text="Olá, eu sou" className="text-foreground" />
+          <TypewriterText text="Olá, eu sou" className="text-foreground" delay={600} />
           <br />
-          <ScrambleText text="Fillipi Villani Stiehler" className="text-gradient" />
+          <TypewriterText text="Fillipi Villani Stiehler" className="text-gradient" delay={1400} />
         </motion.h1>
 
         <motion.p
