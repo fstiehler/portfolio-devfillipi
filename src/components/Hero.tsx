@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { Download } from "lucide-react";
 
 const HoverLetter = ({ char, index }: { char: string; index: number }) => {
   const [hovered, setHovered] = useState(false);
@@ -76,13 +77,21 @@ const Hero = () => {
         >
           <a
             href="#contato"
-            className="inline-flex items-center px-8 py-3 rounded-lg bg-primary text-primary-foreground font-heading text-sm font-semibold tracking-wide hover:opacity-90 transition-opacity glow-box"
+            className="inline-flex items-center justify-center px-8 py-3 rounded-lg bg-primary text-primary-foreground font-heading text-sm font-semibold tracking-wide hover:opacity-90 transition-opacity glow-box"
           >
             Entre em contato
           </a>
           <a
+            href="/curriculo-fillipi.pdf"
+            download
+            className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg border border-glow text-foreground font-heading text-sm font-semibold tracking-wide hover:bg-secondary transition-colors"
+          >
+            <Download className="w-4 h-4" />
+            Currículo
+          </a>
+          <a
             href="#experiencia"
-            className="inline-flex items-center px-8 py-3 rounded-lg border border-glow text-foreground font-heading text-sm font-semibold tracking-wide hover:bg-secondary transition-colors"
+            className="inline-flex items-center justify-center px-8 py-3 rounded-lg border border-glow text-foreground font-heading text-sm font-semibold tracking-wide hover:bg-secondary transition-colors"
           >
             Minha experiência
           </a>
