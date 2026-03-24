@@ -3,7 +3,7 @@ import fillipiPhoto from "@/assets/fillipi-photo.jpg";
 
 const About = () => {
   return (
-    <section id="sobre" className="py-24 px-6">
+    <section id="sobre" className="py-16 sm:py-24 px-4 sm:px-6">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
