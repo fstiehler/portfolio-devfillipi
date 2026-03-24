@@ -26,7 +26,7 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex justify-center gap-6"
+          className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6"
         >
           <a
             href="mailto:fillipivillani2024@gmail.com"

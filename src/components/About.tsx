@@ -40,7 +40,7 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="space-y-5 text-secondary-foreground leading-relaxed text-lg"
+            className="space-y-5 text-secondary-foreground leading-relaxed text-base sm:text-lg"
           >
             <p>
               Tenho <span className="text-primary font-semibold">18 anos</span> e sou apaixonado por desenvolvimento de software,
