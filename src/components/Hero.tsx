@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { Download } from "lucide-react";
 
 const HoverLetter = ({ char, index }: { char: string; index: number }) => {
   const [hovered, setHovered] = useState(false);
