@@ -1,33 +1,51 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Download } from "lucide-react";
 
-const HoverLetter = ({ char, index }: { char: string; index: number }) => {
-  const [hovered, setHovered] = useState(false);
+const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%&*!?<>/";
 
-  if (char === " ") return <span>&nbsp;</span>;
+const ScrambleText = ({ text, className }: { text: string; className?: string }) => {
+  const [display, setDisplay] = useState(text);
+  const [isScrambling, setIsScrambling] = useState(false);
+
+  const scramble = useCallback(() => {
+    if (isScrambling) return;
+    setIsScrambling(true);
+    let iteration = 0;
+    const interval = setInterval(() => {
+      setDisplay(
+        text
+          .split("")
+          .map((char, i) => {
+            if (char === " ") return " ";
+            if (i < iteration) return text[i];
+            return chars[Math.floor(Math.random() * chars.length)];
+          })
+          .join("")
+      );
+      iteration += 1 / 2;
+      if (iteration >= text.length) {
+        clearInterval(interval);
+        setDisplay(text);
+        setIsScrambling(false);
+      }
+    }, 30);
+  }, [text, isScrambling]);
+
+  useEffect(() => {
+    const timeout = setTimeout(scramble, 800);
+    return () => clearTimeout(timeout);
+  }, []);
 
   return (
-    <motion.span
-      className="inline-block cursor-default transition-colors duration-200"
-      style={{ color: hovered ? "hsl(175 80% 50%)" : undefined }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      animate={hovered ? { y: -8, scale: 1.15 } : { y: 0, scale: 1 }}
-      transition={{ type: "spring", stiffness: 400, damping: 15 }}
+    <span
+      className={`${className} cursor-default`}
+      onMouseEnter={scramble}
     >
-      {char}
-    </motion.span>
+      {display}
+    </span>
   );
 };
-
-const InteractiveText = ({ text, className }: { text: string; className?: string }) => (
-  <span className={className}>
-    {text.split("").map((char, i) => (
-      <HoverLetter key={i} char={char} index={i} />
-    ))}
-  </span>
-);
 
 const Hero = () => {
   return (
