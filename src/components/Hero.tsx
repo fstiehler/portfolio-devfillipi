@@ -1,9 +1,36 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
+
+const HoverLetter = ({ char, index }: { char: string; index: number }) => {
+  const [hovered, setHovered] = useState(false);
+
+  if (char === " ") return <span>&nbsp;</span>;
+
+  return (
+    <motion.span
+      className="inline-block cursor-default transition-colors duration-200"
+      style={{ color: hovered ? "hsl(175 80% 50%)" : undefined }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      animate={hovered ? { y: -8, scale: 1.15 } : { y: 0, scale: 1 }}
+      transition={{ type: "spring", stiffness: 400, damping: 15 }}
+    >
+      {char}
+    </motion.span>
+  );
+};
+
+const InteractiveText = ({ text, className }: { text: string; className?: string }) => (
+  <span className={className}>
+    {text.split("").map((char, i) => (
+      <HoverLetter key={i} char={char} index={i} />
+    ))}
+  </span>
+);
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-6">
-      {/* Grid background */}
       <div className="absolute inset-0 opacity-[0.03]" style={{
         backgroundImage: 'linear-gradient(hsl(175 80% 50%) 1px, transparent 1px), linear-gradient(90deg, hsl(175 80% 50%) 1px, transparent 1px)',
         backgroundSize: '60px 60px'
@@ -26,9 +53,9 @@ const Hero = () => {
           transition={{ duration: 0.7, delay: 0.15 }}
           className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6"
         >
-          <span className="text-foreground">Olá, eu sou</span>
+          <InteractiveText text="Olá, eu sou" className="text-foreground" />
           <br />
-          <span className="text-gradient">Fillipi Villani Stiehler</span>
+          <InteractiveText text="Fillipi Villani Stiehler" className="text-gradient" />
         </motion.h1>
 
         <motion.p
