@@ -17,7 +17,7 @@ const About = () => {
           </h2>
         </motion.div>
 
-        <div className="flex flex-col md:flex-row gap-10 items-start">
+        <div className="flex flex-col md:flex-row gap-8 md:gap-10 items-center md:items-start">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
