@@ -54,9 +54,9 @@ const Hero = () => {
           transition={{ duration: 0.7, delay: 0.15 }}
           className="font-heading text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6"
         >
-          <ScrambleText text="Olá, eu sou" className="text-foreground" />
+          <TypewriterText text="Olá, eu sou" className="text-foreground" delay={600} />
           <br />
-          <ScrambleText text="Fillipi Villani Stiehler" className="text-gradient" />
+          <TypewriterText text="Fillipi Villani Stiehler" className="text-gradient" delay={1400} />
         </motion.h1>
 
         <motion.p
