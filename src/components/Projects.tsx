@@ -3,10 +3,10 @@ import { ExternalLink } from "lucide-react";
 
 const projects = [
   {
-    title: "Villani Estética Automotiva",
+    title: "Estética Automotiva Villani",
     description:
       "Website completo para estética automotiva, com catálogo de serviços, galeria, integração com WhatsApp e design responsivo focado em conversão.",
-    tags: ["React", "TypeScript", "Responsive Design", "SEO"],
+    tags: ["React", "TypeScript", "Responsive Design", "SEO", "Material UI"],
     url: "https://esteticavillani.com.br",
   },
   {
@@ -17,17 +17,17 @@ const projects = [
     url: "https://www.systemfluids.com.br",
   },
   {
-    title: "EKO GF",
+    title: "EKO GLOBAL",
     description:
-      "Website institucional para a EKO GF, com design moderno, responsivo e otimizado para performance e SEO.",
-    tags: ["React", "TypeScript", "Responsive Design"],
+      "Website institucional para a EKO GLOBAL, com design moderno, responsivo e otimizado para performance e SEO.",
+    tags: ["React", "TypeScript", "Responsive Design", "Material UI"],
     url: "https://ekogf.com",
   },
   {
     title: "Zyroon",
     description:
       "Plataforma web moderna com interface intuitiva, design responsivo e foco em experiência do usuário.",
-    tags: ["React", "TypeScript", "Front-End"],
+    tags: ["React", "TypeScript", "Material UI"],
     url: "https://zyroon.com.br",
   },
 ];
