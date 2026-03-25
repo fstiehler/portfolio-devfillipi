@@ -15,7 +15,7 @@ const ParticlesBackground = () => {
 
     const resize = () => {
       canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight * 5; // cover full page scroll
+      canvas.height = window.innerHeight * 5;
     };
 
     class Particle {
