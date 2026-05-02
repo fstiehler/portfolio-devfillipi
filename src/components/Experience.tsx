@@ -24,7 +24,6 @@ const Experience = () => {
           transition={{ duration: 0.6, delay: 0.15 }}
           className="relative border-l-2 border-glow pl-8 ml-4"
         >
-          {/* Timeline dot */}
           <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary glow-box" />
 
           <div className="mb-2 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
@@ -35,7 +34,7 @@ const Experience = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 mb-6">
-            <span className="font-mono text-primary text-sm font-semibold">Evoluinfo Tecnologias</span>
+            <span className="font-mono text-primary text-sm font-semibold">Evoluinfo Tecnologia</span>
             <span className="text-muted-foreground">·</span>
             <div className="flex items-center gap-1.5 text-muted-foreground text-sm">
               <Calendar className="w-3.5 h-3.5" />

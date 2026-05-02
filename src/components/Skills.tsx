@@ -7,13 +7,15 @@ const skills = [
   { name: "TypeScript", category: "frontend" },
   { name: "Next.js", category: "frontend" },
   { name: "Material UI", category: "frontend" },
+  { name: "Golang", category: "backend" },
+  { name: "Java", category: "backend" },
+  { name: "SQL", category: "backend" },
+  { name: "Nest.js", category: "backend" },
   { name: "Git", category: "tools" },
   { name: "GitHub", category: "tools" },
   { name: "GitLab", category: "tools" },
   { name: "ClickUp", category: "tools" },
   { name: "Jira", category: "tools" },
-  { name: "Golang", category: "backend" },
-  { name: "Nest.js", category: "backend" },
 ];
 
 const SkillTag = ({ name, index }: { name: string; index: number }) => (

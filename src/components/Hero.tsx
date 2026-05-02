@@ -82,7 +82,7 @@ const Hero = () => {
             Entre em contato
           </a>
           <a
-            href="/curriculo-fillipi.pdf"
+            href="/Curri_culo - Fillipi Villani Stiehler - Desenvolvedor de Software.pdf"
             download
             className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg border border-glow text-foreground font-heading text-sm font-semibold tracking-wide hover:bg-secondary transition-colors"
           >
@@ -103,7 +103,7 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="mt-16 font-mono text-muted-foreground text-xs"
         >
-          <span className="text-primary">const</span> idade = <span className="text-primary">18</span>;
+          <span className="text-primary">const</span> idade = <span className="text-primary">19</span>;
           <span className="animate-blink ml-0.5">|</span>
         </motion.div>
       </div>

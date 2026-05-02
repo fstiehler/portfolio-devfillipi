@@ -43,12 +43,12 @@ const About = () => {
             className="space-y-5 text-secondary-foreground leading-relaxed text-base sm:text-lg"
           >
             <p>
-              Tenho <span className="text-primary font-semibold">18 anos</span> e sou apaixonado por desenvolvimento de software,
+              Tenho <span className="text-primary font-semibold">19 anos</span> e sou apaixonado por desenvolvimento de software,
               com foco principal em <span className="text-primary font-semibold">Front-End</span>. Minha jornada na programação
               começou cedo e hoje construo interfaces web modernas, responsivas e focadas na experiência do usuário.
             </p>
             <p>
-              Trabalho com <span className="text-foreground">React, TypeScript, JavaScript, HTML e CSS</span>, criando
+              Trabalho com <span className="text-foreground">JavaScript, React, TypeScript, HTML e CSS</span>, criando
               componentes reutilizáveis e estruturando aplicações de forma escalável. Também possuo experiência
               com backend em <span className="text-foreground">Golang</span> e <span className="text-foreground">Nest.js</span>,
               o que me permite ter uma visão mais completa das aplicações.
